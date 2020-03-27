@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "as a visitor", type: :feature do
-  it "can visit the professors index page and see al professors with their name, age and specialty" do
+  it "can visit the professors show page and see each students name" do
     snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
 
     harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
