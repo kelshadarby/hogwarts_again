@@ -9,9 +9,9 @@ RSpec.describe "as a visitor", type: :feature do
     malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
     longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
 
-    ProfessorStudent.create(student_id: harry, professor_id: snape)
-    ProfessorStudent.create(student_id: longbottom, professor_id: snape)
-    ProfessorStudent.create(student_id: malfoy, professor_id: lupin)
+    ProfessorStudent.create(student: harry, professor: snape)
+    ProfessorStudent.create(student: longbottom, professor: snape)
+    ProfessorStudent.create(student: malfoy, professor: lupin)
 
     visit "/professors/#{snape.id}"
 
