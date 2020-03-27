@@ -1,6 +1,6 @@
 <h1> All Professors </h1>
 
-<% @professors.each do |professor| %>
+<% @sorted_professors.each do |professor| %>
   <section id = "professor-<%=professor.id%>">
     <h2>Name: <%= professor.name %></h2>
     <p>Age: <%= professor.age %></p>
