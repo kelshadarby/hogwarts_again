@@ -5,5 +5,10 @@ class ProfessorsController < ApplicationController
 
   def show
     @professor = Professor.find(params[:id])
+    student_ages = @professor.students.map do |student|
+      student.age.to_f
+    end
+    total_ages = student_ages.sum
+    @average_student_age = total_ages/student_ages.length
   end
 end
