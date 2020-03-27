@@ -8,17 +8,17 @@ RSpec.describe "as a visitor", type: :feature do
 
     visit "/professors"
 
-    within "#song-#{snape.id}" do
+    within "#professor-#{snape.id}" do
       expect(page).to have_content("Name: #{snape.name}")
       expect(page).to have_content("Age: #{snape.age}")
       expect(page).to have_content("Specialty: #{snape.specialty}")
     end
-    within "#song-#{hagrid.id}" do
-      expect(page).to have_content("Name: #{hagrid.name}")
-      expect(page).to have_content("Age: #{hagrid.age}")
-      expect(page).to have_content("Specialty: #{hagrid.specialty}")
+    within "#professor-#{hagarid.id}" do
+      expect(page).to have_content("Name: #{hagarid.name}")
+      expect(page).to have_content("Age: #{hagarid.age}")
+      expect(page).to have_content("Specialty: #{hagarid.specialty}")
     end
-    within "#song-#{lupin.id}" do
+    within "#professor-#{lupin.id}" do
       expect(page).to have_content("Name: #{lupin.name}")
       expect(page).to have_content("Age: #{lupin.age}")
       expect(page).to have_content("Specialty: #{lupin.specialty}")
