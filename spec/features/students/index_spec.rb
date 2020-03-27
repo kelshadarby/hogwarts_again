@@ -25,7 +25,7 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to_not have_content(harry.house)
     end
     within "#student-#{malfoy.id}" do
-      expect(page).to have_content("#{longbottom.name}: 2")
+      expect(page).to have_content("#{malfoy.name}: 2")
       expect(page).to_not have_content(malfoy.age)
       expect(page).to_not have_content(malfoy.house)
     end
