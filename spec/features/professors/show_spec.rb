@@ -25,4 +25,20 @@ RSpec.describe "as a visitor", type: :feature do
       end
     end
   end
+  
+  it "can visit the professors show page and see average age of all students for that professor" do
+    snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
+
+    harry = Student.create(name: "Harry Potter" , age: 12 , house: "Gryffindor" )
+    longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
+
+    ProfessorStudent.create(student: harry, professor: snape)
+    ProfessorStudent.create(student: longbottom, professor: snape)
+
+    visit "/professors/#{snape.id}"
+
+    within '.student-average-age' do
+      expect(page).to have_content("Average Age: 11.5")
+    end
+  end
 end
