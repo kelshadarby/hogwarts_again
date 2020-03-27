@@ -24,4 +24,15 @@ RSpec.describe "as a visitor", type: :feature do
       expect(page).to have_content("Specialty: #{lupin.specialty}")
     end
   end
+  it "can see all students in alphabetical order" do
+    snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
+    hagarid = Professor.create(name: "Rubus Hagarid", age: 38 , specialty: "Care of Magical Creatures")
+    lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
+
+    visit "/professors"
+
+    expect(page.all('.individual-professor')[0]).to have_content(lupin.name)
+    expect(page.all('.individual-professor')[1]).to have_content(hagarid.name)
+    expect(page.all('.individual-professor')[2]).to have_content(snape.name)
+  end
 end
